@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Life Questionnaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for better form appearance */
+        .form-question {
+            margin-bottom: 1.75rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151; /* gray-700 */
+        }
+        .form-input, .form-textarea, .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #D1D5DB; /* gray-300 */
+            border-radius: 0.5rem; /* rounded-lg */
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-color: #4F46E5; /* indigo-600 */
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+        .radio-label, .checkbox-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        .radio-input, .checkbox-input {
+            margin-right: 0.5rem;
+            height: 1.25rem;
+            width: 1.25rem;
+            accent-color: #4F46E5; /* indigo-600 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto max-w-2xl px-4 py-10">
+
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-900">Personal Life Questionnaire</h1>
+            <p class="text-lg text-gray-600 mt-2">A moment for self-reflection.</p>
+        </header>
+
+        <form class="bg-white p-8 md:p-10 rounded-2xl shadow-lg">
+
+            <!-- Section 1: Basic Information -->
+            <fieldset class="border-b border-gray-200 pb-6 mb-6">
+                <legend class="text-2xl font-semibold text-indigo-700 mb-4">Part 1: About You</legend>
+                
+                <div class="form-question">
+                    <label class="form-label" for="full-name">1. Full Name</label>
+                    <input class="form-input" type="text" id="full-name" placeholder="e.g., Alex Doe">
+                </div>
+
+                <div class="form-question">
+                    <label class="form-label" for="birth-date">2. Date of Birth</label>
+                    <input class="form-input" type="date" id="birth-date">
+                </div>
+
+                <div class="form-question">
+                    <label class="form-label" for="occupation">3. Occupation or Field of Study</label>
+                    <input class="form-input" type="text" id="occupation" placeholder="e.g., Software Engineer, Student">
+                </div>
+
+                <div class="form-question">
+                    <label class="form-label" for="location">4. Where do you currently reside?</label>
+                    <input class="form-input" type="text" id="location" placeholder="e.g., Cebu City, Philippines">
+                </div>
+            </fieldset>
+
+            <!-- Section 2: Lifestyle & Habits -->
+            <fieldset class="border-b border-gray-200 pb-6 mb-6">
+                <legend class="text-2xl font-semibold text-indigo-700 mb-4">Part 2: Lifestyle & Habits</legend>
+
+                <div class="form-question">
+                    <span class="form-label">5. How would you describe your morning routine?</span>
+                    <label class="radio-label">
+                        <input type="radio" name="morning-routine" value="structured" class="radio-input"> Structured and consistent
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="morning-routine" value="flexible" class="radio-input"> Flexible and spontaneous
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="morning-routine" value="rushed" class="radio-input"> Often rushed
+                    </label>
+                     <label class="radio-label">
+                        <input type="radio" name="morning-routine" value="non-existent" class="radio-input"> I don't really have one
+                    </label>
+                </div>
+
+                <div class="form-question">
+                    <label for="hobby-time" class="form-label">6. On average, how many hours per week do you dedicate to hobbies?</label>
+                     <input type="range" id="hobby-time" min="0" max="20" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                     <div class="text-center mt-2 text-gray-600"><span id="hobby-time-value">5</span> hours</div>
+                </div>
+
+                <div class="form-question">
+                    <label for="sleep-time" class="form-label">7. How many hours of sleep do you typically get per night?</label>
+                     <input type="range" id="sleep-time" min="0" max="12" value="7" step="0.5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                     <div class="text-center mt-2 text-gray-600"><span id="sleep-time-value">7</span> hours</div>
+                </div>
+
+                <div class="form-question">
+                    <span class="form-label">8. How would you describe your diet?</span>
+                    <label class="radio-label">
+                        <input type="radio" name="diet" value="balanced" class="radio-input"> Mostly balanced and planned
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="diet" value="health-focused" class="radio-input"> Health-focused (e.g., vegetarian, keto)
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="diet" value="spontaneous" class="radio-input"> Spontaneous and convenient
+                    </label>
+                     <label class="radio-label">
+                        <input type="radio" name="diet" value="indulgent" class="radio-input"> I enjoy indulging
+                    </label>
+                </div>
+
+                <div class="form-question">
+                    <span class="form-label">9. What are your favorite ways to unwind? (Select all that apply)</span>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="unwind" value="reading" class="checkbox-input"> Reading a book
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="unwind" value="watching" class="checkbox-input"> Watching movies or TV shows
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="unwind" value="exercise" class="checkbox-input"> Exercising or playing a sport
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="unwind" value="nature" class="checkbox-input"> Spending time in nature
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="unwind" value="socializing" class="checkbox-input"> Socializing with friends or family
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="unwind" value="creative" class="checkbox-input"> Engaging in a creative hobby (art, music, etc.)
+                    </label>
+                </div>
+
+                 <div class="form-question">
+                    <label class="form-label" for="impactful-media">10. What's a book, movie, or song that has impacted you recently?</label>
+                    <input class="form-input" type="text" id="impactful-media" placeholder="e.g., The Midnight Library, Everything Everywhere All at Once">
+                </div>
+            </fieldset>
+
+            <!-- Section 3: Personal Reflections -->
+            <fieldset>
+                <legend class="text-2xl font-semibold text-indigo-700 mb-4">Part 3: Reflections</legend>
+
+                <div class="form-question">
+                    <label class="form-label" for="achievement">11. What is a personal achievement you are most proud of?</label>
+                    <textarea class="form-textarea" id="achievement" rows="4" placeholder="It could be big or small..."></textarea>
+                </div>
+
+                <div class="form-question">
+                    <label class="form-label" for="challenge">12. Describe a challenge you've overcome and what you learned from it.</label>
+                    <textarea class="form-textarea" id="challenge" rows="4" placeholder="Share a story of your resilience..."></textarea>
+                </div>
+
+                <div class="form-question">
+                    <label class="form-label" for="future-goal">13. What is one goal you are currently working towards?</label>
+                    <input class="form-input" type="text" id="future-goal" placeholder="e.g., Learning a new language, starting a project">
+                </div>
+
+                <div class="form-question">
+                    <label class="form-label" for="gratitude">14. What are three things you are grateful for right now?</label>
+                    <textarea class="form-textarea" id="gratitude" rows="4" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea>
+                </div>
+
+                <div class="form-question">
+                    <label class="form-label" for="advice">15. If you could give your younger self one piece of advice, what would it be?</label>
+                    <textarea class="form-textarea" id="advice" rows="4" placeholder="Share some wisdom..."></textarea>
+                </div>
+            </fieldset>
+
+            <!-- Submit Button -->
+            <div class="mt-10 text-center">
+                <button type="submit" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition-all duration-300 transform hover:scale-105">
+                    Submit Responses
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to update the range slider value display
+        const hobbyTimeSlider = document.getElementById('hobby-time');
+        const hobbyTimeValue = document.getElementById('hobby-time-value');
+        hobbyTimeSlider.addEventListener('input', (event) => {
+            hobbyTimeValue.textContent = event.target.value;
+        });
+
+        const sleepTimeSlider = document.getElementById('sleep-time');
+        const sleepTimeValue = document.getElementById('sleep-time-value');
+        sleepTimeSlider.addEventListener('input', (event) => {
+            sleepTimeValue.textContent = event.target.value;
+        });
+
+        // Prevent form submission to see the UI clearly
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your responses!');
+        });
+    </script>
+</body>
+</html>
+
